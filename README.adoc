@@ -12,6 +12,5 @@ file was created inside a container we'll build and spin up, run:
 $ make
 ----
 
-Changing the text written to the file in `builder.sh` will make `make` re-build
-and re-run the container. In real life, we'd probably mount the sources to be
-built into the container as well instead of baking them into the image.
+Changing the text written to the file in `builder.sh` will not cause a rebuild
+of the container, but re-running it will pick up any changes we make.
