@@ -1,0 +1,17 @@
+= Docker build container example
+
+This example shows how to use Docker to compile a file inside a container and
+return the results back to the host filesystem. Example use cases include
+packaging existing programs for different package managers where we maybe don't
+want to spin up a full VM for each target distribution.
+
+To obtain an `out/hello.txt` file in the current working directory, where the
+file was created inside a container we'll build and spin up, run:
+
+----
+$ make
+----
+
+Changing the text written to the file in `builder.sh` will make `make` re-build
+and re-run the container. In real life, we'd probably mount the sources to be
+built into the container as well instead of baking them into the image.
